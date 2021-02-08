@@ -41,7 +41,7 @@ export const UploadProjectsApp = () => {
             </div>
 
             <div className="input-wrapper">
-                <label>Special Instructions</label>
+                <label>Special Instructions:</label>
                 <RichTextEditor
                     value={valueTest}
                 />
@@ -49,9 +49,14 @@ export const UploadProjectsApp = () => {
 
             <div className="input-wrapper">
                 <label>Complexity:</label>
-                <input placeholder="Simple"/>
+                <select>
+                    <option>Simple</option>
+                    <option>Custom</option>
+                    <option>Custom2</option>
+                </select>
             </div>
 
+            <button>Siguiente</button>
         </div>
     )
 }
