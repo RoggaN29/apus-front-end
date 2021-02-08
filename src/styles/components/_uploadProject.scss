@@ -21,6 +21,17 @@ input {
     }
 }
 
+select {
+    border: 1px solid $input-color-boder;
+    border-radius: 3px;
+    color: $gray;
+    font-size: 1rem;
+    padding: 10px;
+    option {
+        color: $gray;
+    }
+}
+
 .RichTextEditor__root___2QXK- {
     border: 1px solid $input-color-boder;
 }

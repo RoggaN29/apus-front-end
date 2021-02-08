@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import RichTextEditor from 'react-rte';
 
-export const UploadProjectsApp = () => {
+export const UploadProjectsApp = ({history}) => {
 
     const [value, setValue] = useState(RichTextEditor.createEmptyValue());
     const [valueTest, setValueTest] = useState(RichTextEditor.createEmptyValue());
@@ -9,6 +9,10 @@ export const UploadProjectsApp = () => {
     const onChange = (value) => {
         setValue(value);
     };
+
+    const handleNext = () => {
+        history.push('/project/1')
+    }
 
     return (
         <div className="animate__animated animate__fadeIn">
@@ -56,7 +60,7 @@ export const UploadProjectsApp = () => {
                 </select>
             </div>
 
-            <button>Siguiente</button>
+            <button className="button" onClick={ handleNext }>Siguiente</button>
         </div>
     )
 }

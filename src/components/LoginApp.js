@@ -4,7 +4,7 @@ export const LoginApp = ({history}) => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        history.push('/proyects')
+        history.push('/projects')
     }
 
     return (

@@ -3,14 +3,14 @@ import {
     Switch,
     Route,
     Redirect } from "react-router-dom";
+import { DetailProjectApp } from '../components/DetailProjectApp';
 import { UploadProjectsApp } from '../components/UploadProjectsApp';
 
 export const DashboardRoutes = ({history}) => {
 
     const handleLogout = () => {
-        history.goBack();
+        history.push('/login')
     }
-
 
     return (
         <>
@@ -19,9 +19,9 @@ export const DashboardRoutes = ({history}) => {
             </div>
             <div>
                 <Switch>
-                    <Route exact path="/proyects" component={ UploadProjectsApp } />
-                    <Route exact path="/proyect/:proyectId" component={ UploadProjectsApp } />
-                    <Redirect to='/proyects' />
+                    <Route exact path="/projects" component={ UploadProjectsApp } />
+                    <Route exact path="/project/:projectId" component={ DetailProjectApp } />
+                    <Redirect to='/projects' />
                 </Switch>
             </div>
         </>
