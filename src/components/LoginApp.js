@@ -1,9 +1,23 @@
 import React from 'react'
 
-export const LoginApp = () => {
+export const LoginApp = ({history}) => {
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        history.push('/proyects')
+    }
+
     return (
-        <div>
-            <h1>Login Screen</h1>
+        <div className="animate__animated animate__fadeIn">
+            <h1>Login</h1>
+            <hr/>
+            <form>
+                <label>Correo electrónico</label>
+                <input />
+                <label>Contraseña</label>
+                <input />
+                <button className="button" onClick={ handleLogin }>Login</button>
+            </form>
         </div>
     )
 }
