@@ -1,18 +1,44 @@
 @import "../variables";
 
 form {
-    margin-bottom: 10px;
     text-align: center;
 }
 
-input[type="text"] {
-    padding: 0.5rem 1rem;
-    border: 2px solid $secondary;
-    height: 17px;
+.login-wrapper{
+    background-color: $light-gray;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .login-card{
+        background-color: #fff;
+        border-radius: 5px;
+        width: 440px;
+        height: 300px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @media(max-width: 768px) {
+            margin: 0px 10px;
+        }
+    }
 }
 
-button.search {
-    background-color: $secondary;
-    border: 2px solid $secondary;
-    border-radius: initial;
+.user-icon {
+    width: 120px;
+    height: auto;
+}
+
+button.login{
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+    border-radius: 4px;
+    text-transform: none;
+    width: 100%;
+    display: block;
+    margin: 20px 0px;
 }

@@ -3,27 +3,24 @@ import {
     Switch,
     Route,
     Redirect } from "react-router-dom";
-import { DetailProjectApp } from '../components/DetailProjectApp';
-import { UploadProjectsApp } from '../components/UploadProjectsApp';
+import { PojectsListApp } from '../components/PojectsListApp';
+import { ProjectDetailsApp } from '../components/ProjectDetailApp';
+import { ProjectsUploadApp } from '../components/ProjectsUploadApp';
 
 export const DashboardRoutes = ({history}) => {
 
-    const handleLogout = () => {
-        history.push('/login')
-    }
-
     return (
-        <>
-            <div className="navbar-wrapper">
-                <button className="button" onClick={ handleLogout }>Logout</button>
+        <div className="bg-template">
+            <div className="main--wrapper">
+                <div>
+                    <Switch>
+                        <Route exact path="/projects" component={ PojectsListApp } />
+                        <Route exact path="/new-project" component={ ProjectsUploadApp } />
+                        <Route exact path="/project/:projectId" component={ ProjectDetailsApp } />
+                        <Redirect to='/projects' />
+                    </Switch>
+                </div>
             </div>
-            <div>
-                <Switch>
-                    <Route exact path="/projects" component={ UploadProjectsApp } />
-                    <Route exact path="/project/:projectId" component={ DetailProjectApp } />
-                    <Redirect to='/projects' />
-                </Switch>
-            </div>
-        </>
+        </div>
     )
 }

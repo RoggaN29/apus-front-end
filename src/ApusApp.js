@@ -3,7 +3,7 @@ import { AppRouter } from './routers/AppRouter'
 
 export const ApusApp = () => {
     return (
-        <div className="main--wrapper">
+        <div>
             <AppRouter />
         </div>
     )
