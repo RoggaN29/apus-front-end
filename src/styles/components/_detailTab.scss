@@ -1,0 +1,23 @@
+@import '../variables';
+
+.tabs {
+    button{
+        background-color: #fff;
+        border-bottom: 1px solid $gray;
+        border-radius: 0;
+        color: $gray;
+        &:focus{
+            outline: none;
+        }
+        &.active {
+            border: 1px solid $gray;
+            border-bottom: none;
+        }
+    }
+}
+
+.form-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0px 20px;
+}

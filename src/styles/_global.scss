@@ -33,9 +33,10 @@ h1 {
 
 .main--wrapper {
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 0px auto;
+    padding: 20px;
     @media(max-width: 768px) {
-        margin: 10px;
+        margin: 10px auto;
     }
 }
 
@@ -74,15 +75,19 @@ input[type="submit"] {
     text-decoration: none;
     transition: all 0.5s ease;
     text-align: center;
+    &.search{
+        border-radius: 3px;
+    }
     &:hover{
         background-color: $button-color-hover;
+    }
+    &:focus{
+        outline: none;
     }
 }
 
 a:hover {
-    background-color: #fff;
-    color: $primary;
-    border: 1px solid $primary;
+    border-bottom: 1px solid $primary;
 }
 
 //input,select, textarea
@@ -108,10 +113,11 @@ label {
 input {
     border: 1px solid $input-color-border;
     padding: 10px;
+    color: $gray;
     border-radius: 3px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     &::placeholder {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         color: $gray;
     }
 }
@@ -119,17 +125,20 @@ input {
 textarea {
     border: 1px solid $input-color-border;
     border-radius: 3px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 10px;
+    color: $gray;
     height: 60px;
+    resize: none;
 }
 
 select {
     border: 1px solid $input-color-border;
     border-radius: 3px;
     color: $gray;
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 10px;
+    height: 40px;
     option {
         color: $gray;
     }

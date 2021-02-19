@@ -1,81 +1,81 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
-import { getProjectById } from '../../helpers/getProjectById';
 
-export const DetailTab = ({projectId}) => {
+export const DetailTab = ({project}) => {
 
-    const project = getProjectById( projectId );
+    // console.log('DetailTab', project)
     const [projectValues, setProjectValues] = useState(project);
 
     if ( !project ) {
         return <Redirect to="/" />;
     }
 
-    const { name, description, scope, model, instructions, complexity, departament, tags, lead, email } = projectValues;
+    const { name, description, scope, modelSupport, specialInstructions, complexity, department, tags, projectLead, projectLeadEmail } = projectValues;
 
     const changeValue = (e) => {
         console.log(e.target.value)
-        //setProjectValues(e.target.value)
+        setProjectValues(e.target.value)
     }
 
     return (
-        <div className="animate__animated animate__fadeIn">
-
+        <form>
             <h1>Project detail</h1>
+            <div className="form-wrapper">
         
-            <div className="input-wrapper">
-                <label>Project name:</label>
-                <input placeholder="Enter project name" value={name} onChange={ changeValue }/>
-            </div>
+                <div className="input-wrapper">
+                    <label>Project name:</label>
+                    <input placeholder="Enter project name" name={name} value={name} onChange={ changeValue }/>
+                </div>
 
-            <div className="input-wrapper">
-                <label>Project description:</label>
-                <textarea value={description} onChange={ changeValue }></textarea>
-            </div>
+                <div className="input-wrapper">
+                    <label>Complexity:</label>
+                    <select name={complexity} value={complexity} onChange={ changeValue }>
+                        <option>Simple</option>
+                        <option>Medium</option>
+                        <option>Large</option>
+                    </select>
+                </div>
 
-            <div className="input-wrapper">
-                <label>Project scope:</label>
-                <textarea value={scope} onChange={ changeValue }></textarea>
-            </div>
+                <div className="input-wrapper">
+                    <label>Project description:</label>
+                    <textarea name={description} value={description} onChange={ changeValue }></textarea>
+                </div>
 
-            <div className="input-wrapper">
-                <label>Support model:</label>
-                <textarea value={model} onChange={ changeValue }></textarea>
-            </div>
+                <div className="input-wrapper">
+                    <label>Project scope:</label>
+                    <textarea name={scope} value={scope} onChange={ changeValue }></textarea>
+                </div>
 
-            <div className="input-wrapper">
-                <label>Special Instructions:</label>
-                <textarea value={instructions} onChange={ changeValue }></textarea>
-            </div>
+                <div className="input-wrapper">
+                    <label>Support model:</label>
+                    <textarea name={modelSupport} value={modelSupport} onChange={ changeValue }></textarea>
+                </div>
 
-            <div className="input-wrapper">
-                <label>Complexity:</label>
-                <select value={complexity} onChange={ changeValue }>
-                    <option>Simple</option>
-                    <option>Medium</option>
-                    <option>Large</option>
-                </select>
-            </div>
+                <div className="input-wrapper">
+                    <label>Special Instructions:</label>
+                    <textarea name={specialInstructions} value={specialInstructions} onChange={ changeValue }></textarea>
+                </div>
 
-            <div className="input-wrapper">
-                <label>Departament:</label>
-                <input placeholder="Enter departament" value={departament} onChange={ changeValue }/>
-            </div>
+                <div className="input-wrapper">
+                    <label>Departament:</label>
+                    <input placeholder="Enter departament" name={department} value={department} onChange={ changeValue }/>
+                </div>
 
-            <div className="input-wrapper">
-                <label>Tags:</label>
-                <input placeholder="Enter tags" value={tags} onChange={ changeValue }/>
-            </div>
+                <div className="input-wrapper">
+                    <label>Tags:</label>
+                    <input placeholder="Enter tags" name={tags} value={tags} onChange={ changeValue }/>
+                </div>
 
-            <div className="input-wrapper">
-                <label>Project lead:</label>
-                <input placeholder="Enter project lead" value={lead} onChange={ changeValue }/>
-            </div>
+                <div className="input-wrapper">
+                    <label>Project lead:</label>
+                    <input placeholder="Enter project lead" name={projectLead} value={projectLead} onChange={ changeValue }/>
+                </div>
 
-            <div className="input-wrapper">
-                <label>E-mail lead:</label>
-                <input placeholder="Enter e-mail lead" value={email} onChange={ changeValue }/>
+                <div className="input-wrapper">
+                    <label>E-mail lead:</label>
+                    <input placeholder="Enter e-mail lead" name={projectLeadEmail} value={projectLeadEmail} onChange={ changeValue }/>
+                </div>
             </div>
-        </div>
+        </form>
     )
 }

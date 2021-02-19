@@ -1,8 +1,7 @@
-import {projects} from '../data/projects';
+export const getProjectById = ( projects, projectId ) => {
 
-export const getProjectById = ( projectId ) => {
     const dataProject = projects.find( (project) => {
-        return project.id === projectId
+        return project._id === projectId
     })
     return dataProject;
 }

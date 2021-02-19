@@ -1,6 +1,5 @@
-import { projects } from '../data/projects';
 
-export const getProjectsByName = ( name ) => {
+export const getProjectsByName = ( projects, name ) => {
     if ( name === '' ) {
         return projects;
     }

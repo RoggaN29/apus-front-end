@@ -2,29 +2,28 @@ import {
     useEffect,
     useState
 } from "react";
-import {
-    getProjects
-} from "../helpers/getProjects";
+import { postLogin } from "../helpers/postLogin";
 
-export const useFetchProjects = ( q ) => {
-
+export const useFetchLogin = (data) => {
     const [state, setState] = useState({
-        projectsFiltered: [],
+        status: false,
         loading: true
     });
 
     useEffect(() => {
-        getProjects(q)
+        postLogin(data)
             .then((response) => {
+                console.log('useFetchLogin', response)
                 setState({
-                    projectsFiltered: response,
+                    status: true,
                     loading: false
                 });
             })
             .catch(function (error) {
-                console.log("Hubo un problema con la petición:" + error.message);
+                console.log("Hubo un problema al loggearse:" + error.message);
             });
-    }, [q]);
+    }, []);
 
     return state;
+
 };

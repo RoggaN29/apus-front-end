@@ -2,8 +2,9 @@
 @import './global';
 
 //components
-@import './components/shared/navbar';
-@import './components/shared/projectCard';
 @import './components/login';
 @import './components/projectUpload';
 @import './components/projectDetail';
+@import './components/detailTab';
+@import './components/shared/projectCard';
+@import './components/shared/navbar';

@@ -7,7 +7,7 @@ import { PojectsListApp } from '../components/PojectsListApp';
 import { ProjectDetailsApp } from '../components/ProjectDetailApp';
 import { ProjectsUploadApp } from '../components/ProjectsUploadApp';
 
-export const DashboardRoutes = ({history}) => {
+export const DashboardRoutes = () => {
 
     return (
         <div className="bg-template">
